@@ -24,7 +24,7 @@ if (!empty($title) && !empty($impression)) {
 }
 
 if (empty($title) || empty($impression)) {
-  $errors[] = "タイトルまたは本文が入力されていません！";
+  $errors[] = "タイトルまたは感想が入力されていません！";
 }
 
 ?>
