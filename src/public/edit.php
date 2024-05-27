@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['id'])) {
+    header('Location: ./user/signin.php');
+    exit();
+}
+
 $dbUserName = 'root';
 $dbPassword = 'password';
 $pdo = new PDO(
@@ -23,6 +29,7 @@ $page = $statement->fetch();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>edit.php</title>
 </head>
+<?php require_once './components/header.php'; ?>
 <body>
   
   <h3>編集</h3>

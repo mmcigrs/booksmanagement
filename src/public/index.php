@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['id'])) {
+    header('Location: ./user/signin.php');
+    exit();
+}
+
 $dbUserName = 'root';
 $dbPassword = 'password';
 $pdo = new PDO(
@@ -21,6 +27,7 @@ $aryList = $sth -> fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>書籍一覧</title>
 </head>
+<?php require_once './components/header.php'; ?>
 <h2>書籍一覧</h2>
 <a href="create.php">書籍を追加</a>
 <body>
