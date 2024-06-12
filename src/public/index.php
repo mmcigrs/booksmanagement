@@ -41,7 +41,7 @@ $aryList = $sth -> fetchAll(PDO::FETCH_ASSOC);
   </tr>
   <?php foreach ($aryList as $key => $val) : ?>
     <tr bgcolor="#f5f5f5">
-      <td><?php echo $val["title"]; ?></td>
+      <td><a href="./detail.php?id=<?php echo $val['id']; ?>"><?php echo $val["title"]; ?></a></td>
       <td><?php echo $val["impression"]; ?></td>
       <td><?php echo $val["created_at"]; ?></td>
       <td><a href="./edit.php?id=<?php echo $val['id']; ?>">編集</a></td>
